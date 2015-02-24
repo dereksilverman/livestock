@@ -123,10 +123,15 @@
         </div>
 
         <form>
-          <input type="text" class="form-control modal-input" name="breed" placeholder="Breed" required>
+          <input type="text" class="form-control modal-input" name="tag" placeholder="Tag #" required>
+          <input type="text" class="form-control modal-input" name="weight" placeholder="Live Weight (kg)" required
+          <input type="text" class="form-control modal-input" name="grade" placeholder="Grade" required>
+          <input type="text" class="form-control modal-input" name="breed" placeholder="Breed" required
           <input type="email" class="form-control modal-input" name="age" placeholder="Age" autocomplete="off" required>
           <input type="email" class="form-control modal-input" name="gender" placeholder="Male" autocomplete="off" required>
           <input type="email" class="form-control modal-input" name="gender" placeholder="Female" autocomplete="off" required>
+          <input type="email" class="form-control modal-input" name="delivery_date" placeholder="Earliest Delivery Date" autocomplete="off" required>
+          <input type="email" class="form-control modal-input" name="reserve_price" placeholder="Reserve Price" autocomplete="off" required>
           <button class="btn-primary step-one" style="width: 100%">Next</button>
         </form>
       </div>
@@ -141,13 +146,11 @@
             <option>Greater Nariobi</option>
             <option>The West</option>
           </select>
-          <input type="email" class="form-control modal-input" name="delivery_date" placeholder="Earliest Delivery Date" autocomplete="off" required>
-          <input type="email" class="form-control modal-input" name="reserve_price" placeholder="Reserve Price" autocomplete="off" required>
           <button class="btn-primary step-two" style="width: 100%">Next</button>
         </form>
       </div>
 
-      <div class="form-page-three" style="display: none">
+<!--  <div class="form-page-three" style="display: none">
         <div class="disclaimer">
         <strong>Disclaimer</strong>
         <br/><br/>
@@ -168,7 +171,7 @@
           <input type="text" class="form-control modal-input" name="seller" placeholder="I Agree" required>
           <button class="btn-primary step-three" style="width: 100%">Submit</button>
         </form>
-      </div>
+      </div> -->
 
       <div class="form-page-four" style="display: none">
         <div class="success">
@@ -203,13 +206,13 @@ $(".step-one").click(function(e){
 
 $(".step-two").click(function(e){
     $(".form-page-two").hide();
-    $(".form-page-three").show();
-})
-
-$(".step-three").click(function(e){
-    $(".form-page-three").hide();
     $(".form-page-four").show();
 })
+
+// $(".step-three").click(function(e){
+//     $(".form-page-three").hide();
+//     $(".form-page-four").show();
+// })
 
 $(".step-four").click(function(e){
     $(".form-page-four").hide();
