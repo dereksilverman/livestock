@@ -1,0 +1,30 @@
+<%= form_for(@livestock) do |f| %>
+  <% if @livestock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@livestock.errors.count, "error") %> prohibited this livestock from being saved:</h2>
+
+      <ul>
+      <% @livestock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+        <div class="image-placeholder">
+          Upload Image
+        </div>
+        <form accept-charset="UTF-8" action="/create" method="post">
+          <input type="text" class="form-control modal-input" name="livestock[tag]" placeholder="Tag #" required>
+          <input type="text" class="form-control modal-input" name="livestock[weight]" placeholder="Live Weight (kg)" required
+          <input type="text" class="form-control modal-input" name="livestock[grade]" placeholder="Grade" required>
+          <input type="text" class="form-control modal-input" name="livestock[breed]" placeholder="Breed" required
+          <input type="text" class="form-control modal-input" name="livestock[age]" placeholder="Age" autocomplete="off" required>
+          <input type="text" class="form-control modal-input" name="livestock[gender]" placeholder="Male" autocomplete="off" required>
+          <input type="type" class="form-control modal-input" name="livestock[gender]" placeholder="Female" autocomplete="off" required>
+          <input type="text" class="form-control modal-input" name="livestock[reserve_price]" placeholder="Reserve Price" autocomplete="off" required>
+          <button type="submit" class="btn-primary step-one" style="width: 100%">Next</button>
+        </form>
+  </div>
+<% end %>
