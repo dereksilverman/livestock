@@ -3,6 +3,6 @@ class Submission < ActionMailer::Base
   def livestock_submission(recipient)
     @recipient = recipient
     mail(to: recipient,
-         subject: "[Signed up] Welcome #{recipient}")
+         subject: "[It's a cow!] Thanks #{recipient}")
   end
 end
