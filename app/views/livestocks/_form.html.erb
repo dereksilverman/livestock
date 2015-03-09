@@ -18,14 +18,16 @@
         <form accept-charset="UTF-8" action="/create" method="post">
           <input type="file" name="livestock[photo]" accept="image/*">
           <input type="text" class="form-control modal-input" name="livestock[tag]" placeholder="Tag #" required>
-          <input type="text" class="form-control modal-input" name="livestock[weight]" placeholder="Live Weight (kg)" required
+          <input type="text" class="form-control modal-input" name="livestock[weight]" placeholder="Live Weight (kg)" required>
           <input type="text" class="form-control modal-input" name="livestock[grade]" placeholder="Grade" required>
           <input type="text" class="form-control modal-input" name="livestock[breed]" placeholder="Breed" required
           <input type="text" class="form-control modal-input" name="livestock[age]" placeholder="Age" autocomplete="off" required>
-          <input type="text" class="form-control modal-input" name="livestock[gender]" placeholder="Male" autocomplete="off" required>
-          <input type="type" class="form-control modal-input" name="livestock[gender]" placeholder="Female" autocomplete="off" required>
-          <input type="text" class="form-control modal-input" name="livestock[reserve_price]" placeholder="Reserve Price" autocomplete="off" required>
-          <button type="submit" class="btn-primary step-one" style="width: 100%">Next</button>
+          <select class="form-control modal-input" name="livestock[gender]" placeholder="Gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+<!--           <input type="text" class="form-control modal-input" name="livestock[reserve_price]" placeholder="Reserve Price" autocomplete="off" required> -->
+          <button type="submit" class="btn-primary step-one" style="width: 100%">Submit</button>
         </form>
   </div>
 <% end %>

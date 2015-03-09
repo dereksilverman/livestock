@@ -21,8 +21,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
+    :domain         => 'heroku.com'
   }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
