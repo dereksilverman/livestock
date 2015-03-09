@@ -31,6 +31,7 @@ class LivestocksController < ApplicationController
 
     respond_to do |format|
       if @livestock.save
+        Submission.livestock_submission("tgtully@gmail.com").deliver
         Submission.livestock_submission("dereksilverman@gmail.com").deliver
         format.html { redirect_to @livestock, notice: 'Livestock was successfully created.' }
         format.json { render :show, status: :created, location: @livestock }
