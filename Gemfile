@@ -31,9 +31,15 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'carrierwave' # Probably should delete and everything associated with it
+gem 'aws-sdk'
+gem 'mail'
+
 gem 'sqlite3', :group => [:development, :test]
 group :production do
   gem 'thin'
   gem 'pg'
   gem 'rails_12factor'
 end
+
+
