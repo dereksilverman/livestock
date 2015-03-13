@@ -1,6 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+   	<div class="jumbotron" style="padding: 10px">
+        <h4 style="color: white; text-align: center">Rangeland Trading</h4>
+    </div>
+	<p id="success notice"><%= notice %></p>
+</div>
 
-<p>Name</p><%=@livestock.age%>
+<!-- <p>Name</p><%=@livestock.age%> -->
 
-<%= link_to 'Edit', edit_livestock_path(@livestock) %> |
-<%= link_to 'Back', livestocks_path %>
+<button class="btn-primary step-four" style="width: 100%">
+	<%= link_to 'Submit Another Animal', livestocks_path %>
+</button>
+
+
+
