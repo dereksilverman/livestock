@@ -20,7 +20,14 @@ table {
       <th>Tag #</th>
       <th>Age</th>
       <th>Breed</th>
+      <th>Grade</th>
+      <th>Weight</th>
       <th>Gender</th>
+      <th>Delivery Date</th>
+      <th>Seller</th>
+      <th>Email</th>
+      <th>Location</th>
+      <th>Photo</th>
       <th colspan="3">Actions</th>
     </tr>
     <% @livestocks.each do |livestock| %>
@@ -28,7 +35,14 @@ table {
         <td><%= livestock.tag %></td>
         <td><%= livestock.age %></td>
         <td><%= livestock.breed %></td>
+        <td><%= livestock.weight %></td>
+        <td><%= livestock.grade %></td>
         <td><%= livestock.gender %></td>
+        <td><%= livestock.delivery_date %></td>
+        <td><%= livestock.seller %></td>
+        <td><%= livestock.phone %></td>
+        <td><%= livestock.location %></td>
+        <td><%= livestock.photo %></td>
         <td><%= link_to 'Show', livestock %></td>
         <td><%= link_to 'Edit', edit_livestock_path(livestock) %></td>
         <td><%= link_to 'Destroy', livestock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
