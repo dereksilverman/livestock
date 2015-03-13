@@ -25,14 +25,14 @@ class LivestocksController < ApplicationController
   # POST /livestocks.json
   def create
     @livestock = Livestock.new(livestock_params)
-    # uploader = LivestockPhotoUploader.new
-    # uploader.store!(livestock_params)
+    uploader = LivestockPhotoUploader.new
+    uploader.store!(livestock_params)
     # @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
 
     respond_to do |format|
       if @livestock.save
-        Submission.livestock_submission("tgtully@gmail.com").deliver
-        Submission.livestock_submission("dereksilverman@gmail.com").deliver
+        Submission.livestock_submission(@livestock).deliver
+        Submission.admin_livestock_submission(@livestock).deliver
         format.html { redirect_to @livestock, notice: 'Livestock was successfully created.' }
         format.json { render :show, status: :created, location: @livestock }
       else
@@ -74,6 +74,6 @@ class LivestocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def livestock_params
-      params.require(:livestock).permit(:tag, :breed, :weight, :age, :grade, :gender, :delivery_date, :seller, :phone, :location, :photo)
+      params.require(:livestock).permit(:tag, :breed, :weight, :age, :grade, :gender, :delivery_date, :seller, :phone, :location, :photo, :photo2, :price)
     end
 end

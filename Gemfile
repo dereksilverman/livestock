@@ -29,11 +29,12 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
-gem 'carrierwave' # Probably should delete and everything associated with it
+gem 'carrierwave' 
 gem 'aws-sdk'
 gem 'mail'
+gem 'fog'
 
 gem 'sqlite3', :group => [:development, :test]
 group :production do
