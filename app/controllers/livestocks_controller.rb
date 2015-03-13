@@ -33,7 +33,7 @@ class LivestocksController < ApplicationController
       if @livestock.save
         Submission.livestock_submission(@livestock).deliver
         Submission.admin_livestock_submission(@livestock).deliver
-        format.html { redirect_to @livestock, notice: 'Your animal was successfully submitted' }
+        format.html { redirect_to @livestock, notice: 'Your animal was successfully submitted.' }
         format.json { render :show, status: :created, location: @livestock }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class LivestocksController < ApplicationController
   def update
     respond_to do |format|
       if @livestock.update(livestock_params)
-        format.html { redirect_to @livestock, notice: 'Your animal was successfully updated' }
+        format.html { redirect_to @livestock, notice: 'Your animal was successfully updated.' }
         format.json { render :show, status: :ok, location: @livestock }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class LivestocksController < ApplicationController
   def destroy
     @livestock.destroy
     respond_to do |format|
-      format.html { redirect_to livestocks_url, notice: 'Your animal was successfully removed' }
+      format.html { redirect_to livestocks_url, notice: 'Your animal was successfully removed.' }
       format.json { head :no_content }
     end
   end
