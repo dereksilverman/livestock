@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -31,10 +30,13 @@ gem 'spring',        group: :development
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
-gem 'carrierwave' 
-gem 'aws-sdk'
+# not using, not working
+# gem 'carrierwave' 
+# gem 'aws-sdk'
+# gem 'fog'
+
+gem "paperclip", "~> 4.2"
 gem 'mail'
-gem 'fog'
 
 gem 'sqlite3', :group => [:development, :test]
 group :production do

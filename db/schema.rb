@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313041953) do
+ActiveRecord::Schema.define(version: 20150509173258) do
 
   create_table "livestocks", force: true do |t|
     t.datetime "created_at"
@@ -23,13 +23,14 @@ ActiveRecord::Schema.define(version: 20150313041953) do
     t.integer  "age"
     t.string   "gender"
     t.datetime "delivery_date"
+    t.datetime "price"
     t.string   "seller"
-    t.string   "phone"
+    t.string   "email"
     t.string   "location"
-    t.string   "photo2"
-    t.string   "photo3"
-    t.string   "price"
-    t.string   "photo"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.string   "photo_file_size"
+    t.string   "photo_updated_at"
   end
 
 end

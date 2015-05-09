@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get "/livestocks/feed" => 'livestocks#feed'
+  get "/livestocks/admin" => 'livestocks#admin'
   resources :livestocks
 
   root 'main#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

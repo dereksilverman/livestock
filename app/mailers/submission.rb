@@ -9,7 +9,7 @@ class Submission < ActionMailer::Base
 
   def admin_livestock_submission(livestock)
     @livestock = livestock
-    mail(to: "tgtully@gmail.com",
+    mail(to: "dereksilverman@gmail.com",
          subject: "[Mifugo Trade Submission] Thanks #{livestock.seller} (#{livestock.phone})"
          )
   end

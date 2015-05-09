@@ -1,0 +1,68 @@
+<style>
+
+.cow-container {
+  width: 100%px;
+  padding: 40px;
+}
+
+.cow-container:nth-child(even) {
+  background-color: #EFEFEF;
+}
+
+.cow-container img {
+  border-radius: 4px;
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.feed-container {
+  width: 100%px;
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  margin: 0px 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+label {
+  font-size: 16px;
+}
+
+
+</style>
+
+<div class="container-fluid">
+    <div class="jumbotron" style="padding: 10px">
+        <h4 style="color: white; text-align: center">Mifugo Trade</h4>
+    </div>
+
+    <div class="feed-container">
+      <% @livestocks.each do |livestock| %>
+        <div class="cow-container">
+          <h2>Lot #<%=livestock.id%></h2>
+          <img src="<%= livestock.photo %>"/>
+          <span>
+            <label>Tag<label>
+            <p><%=livestock.tag%></p>
+          </span>
+          <span>
+            <label>Breed<label>
+            <p><%=livestock.breed%></p>
+          </span>
+          <span>
+            <label>Weight<label>
+            <p><%=livestock.weight%>kg</p>
+          </span>
+          <span>
+            <label>Age<label>
+            <p><%=livestock.age%> Years Old</p>
+          </span>
+        </div>
+      <% end %>
+    </div>
+</div>

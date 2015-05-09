@@ -1,25 +1,28 @@
-<%= form_for(@livestock) do |f| %>
-  <% if @livestock.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@livestock.errors.count, "error") %> prohibited this livestock from being saved:</h2>
 
-      <ul>
-      <% @livestock.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="actions">
+    <div class="image-placeholder">
+      <%=image_tag('white_cow.png')%><br/><br/>
+      <b>Upload Image</b><br/>
+      <div class="upload_subtext">We recommend at least 3 images.</div>
     </div>
-  <% end %>
 
-  <div class="actions">
-        <div class="image-placeholder">
-          <%=image_tag('white_cow.png')%><br/><br/>
-          <b>Upload Image</b><br/>
-          <div class="upload_subtext">We recommend at least 3 images.</div>
-        </div>
-        <form enctype="multipart/form-data" action="/create" method="post">
+    <%= form_for @livestock, :html => {:multipart => true } do |form| %>
+         <%= form.file_field :photo %>
+         <%= form.text_field :tag, :class => "form-control modal-input",    :placeholder => "Tag #"%>
+         <%= form.text_field :weight, :class => "form-control modal-input",    :placeholder => "Live Weight (kg)"%>
+         <%= form.text_field :grade, :class => "form-control modal-input",  :placeholder => "Grade"%>
+         <%= form.text_field :breed, :class => "form-control modal-input",  :placeholder => "Breed"%>
+         <%= form.text_field :age, :class => "form-control modal-input",    :placeholder => "Age"%>
+         <%= form.text_field :gender, :class => "form-control modal-input",        :placeholder => "Gender" %>
+         <%= form.text_field :delivery_date, :class => "form-control modal-input", :placeholder => "Earliest Deliery Date" %>
+         <%= form.text_field :price, :class => "form-control modal-input",         :placeholder => "Price" %>
+         <%= form.text_field :seller, :class => "form-control modal-input",        :placeholder => "Seller" %>
+         <%= form.text_field :email, :class => "form-control modal-input",         :placeholder => "Email" %>
+         <%= form.submit 'Create', :class => "btn-primary step-one", :style => "width: 100%"%>
+    <% end %>
+
+<!--         <form enctype="multipart/form-data" action="/create" method="post">
           <input class="image-upload" type="file" name="livestock[photo]" accept="image/*" style="display: none">
-          <input class="image-upload2" type="file" name="livestock[photo2]" accept="image/*" style="display: none">
           <input type="text" class="form-control modal-input" name="livestock[tag]" placeholder="Tag #" required>
           <input type="text" class="form-control modal-input" name="livestock[weight]" placeholder="Live Weight (kg)" required>
           <input type="text" class="form-control modal-input" name="livestock[grade]" placeholder="Grade" required>
@@ -42,9 +45,8 @@
           </form>
 
           <button type="submit" class="btn-primary step-one" style="width: 100%">Submit</button>
-        </form>
+        </form> -->
   </div>
-<% end %>
 
 <script>
 
