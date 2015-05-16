@@ -32,11 +32,8 @@ class LivestocksController < ApplicationController
   # POST /livestocks.json
   def create
     @livestock = Livestock.new(livestock_params)
-
     respond_to do |format|
       if @livestock.save
-        # Submission.livestock_submission(@livestock).deliver #sends email to end user
-        # Submission.admin_livestock_submission(@livestock).deliver #sends email to admin
         format.html { redirect_to @livestock, notice: 'Your animal was successfully submitted.' }
         format.json { render :show, status: :created, location: @livestock }
       else
@@ -78,6 +75,6 @@ class LivestocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def livestock_params
-      params.require(:livestock).permit(:tag, :breed, :weight, :age, :grade, :gender, :delivery_date, :seller, :email, :location, :photo, :photo_file_name, :price)
+      params.require(:livestock).permit(:tag, :breed, :weight, :age, :grade, :gender, :delivery_date, :seller, :email, :phone, :location, :photo, :photo_file_name, :price)
     end
 end

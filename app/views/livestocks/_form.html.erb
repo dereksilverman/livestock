@@ -7,21 +7,22 @@
     </div>
 
     <%= form_for @livestock, :html => {:multipart => true } do |form| %>
-         <%= form.file_field :photo %>
+         <%= form.file_field :photo, :class => "image-upload"%>
          <%= form.text_field :tag, :class => "form-control modal-input",    :placeholder => "Tag #"%>
          <%= form.text_field :weight, :class => "form-control modal-input",    :placeholder => "Live Weight (kg)"%>
-         <%= form.text_field :grade, :class => "form-control modal-input",  :placeholder => "Grade"%>
-         <%= form.text_field :breed, :class => "form-control modal-input",  :placeholder => "Breed"%>
-         <%= form.text_field :age, :class => "form-control modal-input",    :placeholder => "Age"%>
-         <%= form.text_field :gender, :class => "form-control modal-input",        :placeholder => "Gender" %>
-         <%= form.text_field :delivery_date, :class => "form-control modal-input", :placeholder => "Earliest Deliery Date" %>
+         <%= select_tag(:grade, options_for_select(["Grade", "1", "2", "3","4","5" ], "Grade"), {:class => 'form-control' })%>
+         <%= select_tag(:breed, options_for_select(["Breed", "Zebu", "Sahiwal", "Boran","Mixed","Other" ], "Breed"), {:class => 'form-control' })%>
+         <%= select_tag(:age, options_for_select(["Age", "0-1 Years", "1-2 Years", "2-3 Years","4-5 Years",">5 Years"],"Age"), {:class => 'form-control' })%>
+          <%= select_tag(:gender, options_for_select(["Gender", "Male","Female"],"Gender"), {:class => 'form-control' })%>
+         <%= form.text_field :delivery_date, :class => "form-control modal-input", :placeholder => "Delivery Date" %>
          <%= form.text_field :price, :class => "form-control modal-input",         :placeholder => "Price" %>
          <%= form.text_field :seller, :class => "form-control modal-input",        :placeholder => "Seller" %>
          <%= form.text_field :email, :class => "form-control modal-input",         :placeholder => "Email" %>
+         <%= form.text_field :phone, :class => "form-control modal-input",         :placeholder => "Phone" %>
+         <%= form.text_field :location, :class => "form-control modal-input",         :placeholder => "Sub-country" %>
          <%= form.submit 'Create', :class => "btn-primary step-one", :style => "width: 100%"%>
     <% end %>
   </div>
-
 <script>
 
 
