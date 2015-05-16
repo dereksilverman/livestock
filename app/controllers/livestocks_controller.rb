@@ -1,6 +1,6 @@
 class LivestocksController < ApplicationController
   before_action :set_livestock, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!, :except =>[ :index ,:admin, :feed]
   # GET /livestocks
   # GET /livestocks.json
   def index
@@ -18,6 +18,7 @@ class LivestocksController < ApplicationController
   def feed
     @livestocks = Livestock.all
   end
+
 
   # GET /livestocks/new
   def new

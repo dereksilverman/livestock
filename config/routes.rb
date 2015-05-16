@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "/livestocks/feed" => 'livestocks#feed'
   get "/livestocks/admin" => 'livestocks#admin'
   resources :livestocks
 
-  root 'main#index'
+  root 'livestocks#index.html'
+  #after signing out it went to the form page which 
+  #we do not want, we want it to sign out to the index.html page
+  #
 
 
   # The priority is based upon order of creation: first created -> highest priority.
