@@ -78,6 +78,6 @@ class LivestocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def livestock_params
-      params.require(:livestock).permit(:tag, :breed, :weight, :age, :grade, :gender, :delivery_date, :seller, :phone, :location, :photo, :photo_file_name, :price)
+      params.require(:livestock).permit(:tag, :breed, :weight, :age, :grade, :gender, :delivery_date, :seller, :email, :location, :photo, :photo_file_name, :price)
     end
 end
