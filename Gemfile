@@ -32,11 +32,11 @@ gem 'spring',        group: :development
 
 # not using, not working
 # gem 'carrierwave' 
-# gem 'aws-sdk'
 # gem 'fog'
 
 gem "paperclip", "~> 4.2"
 gem 'mail'
+gem 'aws-sdk'
 
 gem 'sqlite3', :group => [:development, :test]
 group :production do
