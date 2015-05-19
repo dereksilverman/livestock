@@ -2,15 +2,13 @@
    	<div class="jumbotron" style="padding: 10px">
         <h4 style="color: white; text-align: center">Mifugo Trade</h4>
     </div>
-    <%= link_to image_tag('white_cow.png')%><br/><br/>
-	<div class="success" id="notice" style="color: white"><%= notice %></div>
+	<div class="success" id="notice" style="color: white">
+	<%= link_to image_tag('white_cow.png')%>
+	<%= notice %></div>
 </div>
 
-<!-- <p>Name</p><%=@livestock.age%> -->
 
-<button class="btn-primary" style="width: 100%; color: white !important">
-	<%= link_to 'Submit Another Animal', livestocks_path %>
-</button>
+<%= button_to "Submit Another Animal", new_livestock_path, id: 'new', method: :get, :class => "btn-primary", :style => "width: 100%; color: white !important"  %>
 
 
 

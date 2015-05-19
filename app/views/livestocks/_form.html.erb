@@ -3,17 +3,23 @@
     <div class="image-placeholder">
       <%=image_tag('white_cow.png')%><br/><br/>
       <b>Upload Image</b><br/>
-      <div class="upload_subtext">We recommend at least 3 images.</div>
+      <div class="upload_subtext"></div>
     </div>
 
     <%= form_for @livestock, :html => {:multipart => true } do |form| %>
          <%= form.file_field :photo, :class => "image-upload"%>
+         <!-- TAG -->
          <%= form.text_field :tag, :class => "form-control modal-input",    :placeholder => "Tag #"%>
+         <!-- WEIGHT -->
          <%= form.text_field :weight, :class => "form-control modal-input",    :placeholder => "Live Weight (kg)"%>
-         <%= select_tag(:grade, options_for_select(["Grade", "1", "2", "3","4","5" ], "Grade"), {:class => 'form-control' })%>
-         <%= select_tag(:breed, options_for_select(["Breed", "Zebu", "Sahiwal", "Boran","Mixed","Other" ], "Breed"), {:class => 'form-control' })%>
-         <%= select_tag(:age, options_for_select(["Age", "0-1 Years", "1-2 Years", "2-3 Years","4-5 Years",">5 Years"],"Age"), {:class => 'form-control' })%>
-          <%= select_tag(:gender, options_for_select(["Gender", "Male","Female"],"Gender"), {:class => 'form-control' })%>
+         <!-- GRADE -->
+         <%= form.select :grade, ["1", "2", "3","4","5" ], :prompt => 'Grade'%>
+         <!-- BREED -->
+         <%= form.select :breed, ["Zebu", "Sahiwal", "Boran","Mixed","Other" ], :prompt => 'Breed'%>
+         <!-- AGE -->
+          <%= form.select :age, ["0-1 Years", "1-2 Years", "2-3 Years","4-5 Years",">5 Years"], :prompt => 'Age'%>
+          <!-- GENDER -->
+          <%= form.select :gender, ["Male","Female"], :prompt => 'Gender'%>
          <%= form.text_field :delivery_date, :class => "form-control modal-input", :placeholder => "Delivery Date" %>
          <%= form.text_field :price, :class => "form-control modal-input",         :placeholder => "Price" %>
          <%= form.text_field :seller, :class => "form-control modal-input",        :placeholder => "Seller" %>
