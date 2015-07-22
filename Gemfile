@@ -37,6 +37,7 @@ gem 'spring',        group: :development
 gem "paperclip", "~> 4.2"
 gem 'mail'
 gem 'aws-sdk','< 2.0'
+gem 'newrelic_rpm'
 
 gem 'sqlite3', :group => [:development, :test]
 group :production do
