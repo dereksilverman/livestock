@@ -1,14 +1,92 @@
+<style>
+
+.cow-container {
+  width: 100%;
+  padding: 40px;
+}
+
+.cow-container:nth-child(even) {
+  background-color: #EFEFEF !important;
+}
+
+.cow-container img {
+  border-radius: 4px;
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.feed-container {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+p {
+  margin: 10px 0px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+a {
+  color: black !important;
+  text-decoration: none;
+}
+
+label {
+  font-size: 16px;
+}
+
+h4 {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
+}
+
+
+</style>
+
+
+
+
 <div class="container-fluid">
    	<div class="jumbotron" style="padding: 10px">
         <h4 style="color: white; text-align: center">Mifugo Trade</h4>
     </div>
-	<div class="success" id="notice" style="color: white">
-	<%= link_to image_tag('white_cow.png')%>
-	<%= notice %></div>
 </div>
 
 
-<%= button_to "Submit Another Animal", new_livestock_path, id: 'new', method: :get, :class => "btn-primary", :style => "width: 100%; color: white !important"  %>
-
+<div class="feed-container">
+    <div class="cow-container">
+      <h2>Tag #<%=@livestock.tag%></h2>
+      <img src="<%=@livestock.photo %>"/>
+      <span>
+        <label>Breed</label>
+        <p><%=@livestock.breed%></p>
+      </span>
+      <span>
+        <label>Grade</label>
+        <p><%=@livestock.grade%></p>
+      </span>
+      <span>
+        <label>Weight</label>
+        <p><%=@livestock.weight%>kg</p>
+      </span>
+      <span>
+        <label>Age</label>
+        <p><%=@livestock.age%> Years Old</p>
+      </span>
+      <span>
+        <label>Gender</label>
+        <p><%=@livestock.gender%></p>
+      </span>
+      <span>
+        <label>Location</label>
+        <p><%=@livestock.location%></p>
+      </span>
+      <br/><span><p style="text-decoration: underline">
+      <%=link_to "Back", livestocks_feed_path, id: 'feed'%>
+      </p></span>
+    </div>
+</div>
 
 

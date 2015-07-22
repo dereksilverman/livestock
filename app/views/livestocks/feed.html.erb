@@ -1,12 +1,12 @@
 <style>
 
 .cow-container {
-  width: 100%px;
+  width: 100%;
   padding: 40px;
 }
 
 .cow-container:nth-child(even) {
-  background-color: #EFEFEF;
+  background-color: #EFEFEF !important;
 }
 
 .cow-container img {
@@ -18,19 +18,30 @@
 }
 
 .feed-container {
-  width: 100%px;
+  width: 100%;
   margin: 0 auto;
   display: block;
 }
 
 p {
-  margin: 0px 10px;
+  margin: 10px 0px;
   font-size: 16px;
   font-weight: normal;
 }
 
+a,
+a:hover,
+a:visited {
+  color: black !important;
+  text-decoration: none;
+}
+
 label {
   font-size: 16px;
+}
+
+h4 {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
 }
 
 
@@ -38,39 +49,41 @@ label {
 
 <div class="container-fluid">
     <div class="jumbotron" style="padding: 10px">
-        <h4 style="color: white; text-align: center">Mifugo Trade</h4>
+        <h4 style="color: white; text-align: center">MIFUGO TRADE</h4>
     </div>
 
     <div class="feed-container">
       <% @livestocks.each do |livestock| %>
+        <a href=<%=livestock_path(livestock)%>>
         <div class="cow-container">
           <h2>Tag #<%=livestock.tag%></h2>
           <img src="<%= livestock.photo %>"/>
           <span>
-            <label>Breed<label>
+            <label>Breed</label>
             <p><%=livestock.breed%></p>
           </span>
           <span>
-            <label>Grade<label>
+            <label>Grade</label>
             <p><%=livestock.grade%></p>
           </span>
           <span>
-            <label>Weight<label>
+            <label>Weight</label>
             <p><%=livestock.weight%>kg</p>
           </span>
           <span>
-            <label>Age<label>
+            <label>Age</label>
             <p><%=livestock.age%> Years Old</p>
           </span>
           <span>
-            <label>Gender<label>
+            <label>Gender</label>
             <p><%=livestock.gender%></p>
           </span>
           <span>
-            <label>Location<label>
+            <label>Location</label>
             <p><%=livestock.location%></p>
           </span>
         </div>
+        </a>
       <% end %>
     </div>
 </div>

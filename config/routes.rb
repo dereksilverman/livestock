@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get "/livestocks/feed" => 'livestocks#feed'
   get "/livestocks/admin" => 'livestocks#admin'
-  resources :livestocks
+resources :livestocks
 
   root 'livestocks#index'
   

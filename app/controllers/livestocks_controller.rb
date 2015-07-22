@@ -9,6 +9,7 @@ class LivestocksController < ApplicationController
   # GET /livestocks/1
   # GET /livestocks/1.json
   def show
+    @livestock = Livestock.find(params[:id])
   end
 
   def admin

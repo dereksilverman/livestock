@@ -19,29 +19,24 @@ body {
 }
 
 .home-container {
-  padding-top: 400px;
+  padding-top: 300px;
+}
+
+h4 {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
 }
 
 </style>
 
 <div class="container-fluid">
     <div class="jumbotron" style="padding: 10px">
-        <h4 style="color: white; text-align: center">Mifugo Trade</h4>
+        <h4 style="color: white; text-align: center">MIFUGO TRADE</h4>
     </div>
     <div class="your-clock"></div>
     <div class="home-container">
       <div class="home-buttons">
-        <%=link_to "Sellers", new_livestock_path, id: 'new' , class: "btn btn-primary", style: "width: 290px; margin-bottom: 20px" %></br>
-        <%=link_to "Buyers", livestocks_feed_path, id: 'feed' , class: "btn btn-primary", style: "width: 290px; margin-bottom: 20px" %>
+        <%=link_to "SELLERS", new_livestock_path, id: 'new' , class: "btn btn-primary", style: "width: 290px; margin-bottom: 20px" %></br>
+        <%=link_to "BUYERS", livestocks_feed_path, id: 'feed' , class: "btn btn-primary", style: "width: 290px; margin-bottom: 20px" %>
       </div>
     </div>
 </div>
-
-<script>
-
-$(document).ready({
-  var clock = $('.your-clock').FlipClock({});
-})
-
-
-</script>
