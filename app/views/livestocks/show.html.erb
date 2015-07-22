@@ -30,7 +30,7 @@ p {
 }
 
 a {
-  color: black !important;
+  color: white !important;
   text-decoration: none;
 }
 
@@ -38,8 +38,13 @@ label {
   font-size: 16px;
 }
 
-h4 {
+h2,p,h4 {
   font-family: "Avenir", Arial, Helvetica, sans-serif;
+}
+
+.btn-primary {
+  height: 45px !important;
+  color: white !important;
 }
 
 
@@ -83,9 +88,9 @@ h4 {
         <label>Location</label>
         <p><%=@livestock.location%></p>
       </span>
-      <br/><span><p style="text-decoration: underline">
-      <%=link_to "Back", livestocks_feed_path, id: 'feed'%>
-      </p></span>
+      <br/><span>
+      <%=link_to "Back",livestocks_feed_path, id: 'feed', :class => "btn btn-primary"%>
+     </span>
     </div>
 </div>
 

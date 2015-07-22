@@ -5,10 +5,6 @@
   padding: 40px;
 }
 
-.cow-container:nth-child(even) {
-  background-color: #EFEFEF !important;
-}
-
 .cow-container img {
   border-radius: 4px;
   margin: 0 auto;
@@ -27,23 +23,40 @@ p {
   margin: 10px 0px;
   font-size: 16px;
   font-weight: normal;
+  padding-right: 20px;
+  display: inline !important;
 }
 
 a,
 a:hover,
 a:visited {
-  color: black !important;
+  color: white !important;
   text-decoration: none;
+  background: none;
 }
 
 label {
   font-size: 16px;
+  margin-left: 20px;
+  padding-right: 5px;
+}
+
+h2,p {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
 }
 
 h4 {
   font-family: "Avenir", Arial, Helvetica, sans-serif;
 }
 
+.cow-container:nth-child(even) {
+  background-color: #EFEFEF !important;
+}
+
+.btn-primary {
+  height: 45px !important;
+  color: white !important;
+}
 
 </style>
 
@@ -54,36 +67,35 @@ h4 {
 
     <div class="feed-container">
       <% @livestocks.each do |livestock| %>
-        <a href=<%=livestock_path(livestock)%>>
         <div class="cow-container">
           <h2>Tag #<%=livestock.tag%></h2>
           <img src="<%= livestock.photo %>"/>
           <span>
-            <label>Breed</label>
+            <label style="margin-left: 0px">Breed</label>
             <p><%=livestock.breed%></p>
           </span>
           <span>
             <label>Grade</label>
             <p><%=livestock.grade%></p>
           </span>
-          <span>
-            <label>Weight</label>
+          <span><br/><br/>
+            <label style="margin-left: 0px">Weight</label>
             <p><%=livestock.weight%>kg</p>
           </span>
           <span>
             <label>Age</label>
             <p><%=livestock.age%> Years Old</p>
           </span>
-          <span>
-            <label>Gender</label>
+          <span><br/><br/>
+            <label style="margin-left: 0px">Gender</label>
             <p><%=livestock.gender%></p>
           </span>
           <span>
             <label>Location</label>
             <p><%=livestock.location%></p>
-          </span>
+          </span><br/><br/><br/>
+          <%=link_to "View", livestock_path(livestock), :class => "btn btn-primary" %>
         </div>
-        </a>
       <% end %>
     </div>
 </div>
