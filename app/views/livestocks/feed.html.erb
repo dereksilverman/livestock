@@ -60,6 +60,7 @@ h4 {
 
 .pagination {
   margin-top: 40px;
+  margin-bottom: 20px;
   padding-left: 30px;
 }
 
@@ -113,7 +114,7 @@ span.page.gap {
             <p><%=livestock.breed%></p>
           </span>
           <span>
-            <label>Grade</label>
+            <label style="margin-left: 0px">Grade</label>
             <p><%=livestock.grade%></p>
           </span>
           <span><br/><br/>
@@ -121,15 +122,15 @@ span.page.gap {
             <p><%=livestock.weight%>kg</p>
           </span>
           <span>
-            <label>Age</label>
-            <p><%=livestock.age%> Years Old</p>
+            <label style="margin-left: 0px">Age</label>
+            <p><%=livestock.age%></p>
           </span>
           <span><br/><br/>
             <label style="margin-left: 0px">Gender</label>
             <p><%=livestock.gender%></p>
           </span>
           <span>
-            <label>Location</label>
+            <label style="margin-left: 0px">Location</label>
             <p><%=livestock.location%></p>
           </span><br/><br/><br/>
           <%=link_to "View", livestock_path(livestock), :class => "btn btn-primary" %>
