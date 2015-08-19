@@ -17,7 +17,7 @@ class LivestocksController < ApplicationController
   end
 
   def feed
-    @livestocks = Livestock.all
+    @livestocks = Livestock.all.page(params[:page]).per(5)
   end
 
   # GET /livestocks/new

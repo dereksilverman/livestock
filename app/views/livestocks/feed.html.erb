@@ -58,6 +58,38 @@ h4 {
   color: white !important;
 }
 
+.pagination {
+  margin-top: 40px;
+  padding-left: 30px;
+}
+
+.pagination span,
+.pagination a {
+  color: white !important;
+  background-color: #39BAF1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 0px 10px;
+  width: 200px !important;
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+span.page {
+  padding: 10px 0px;
+}
+
+span.page.current {
+  background-color: black;
+  padding: 10px 22px;
+}
+
+.last, 
+.first {
+  display: none;
+}
+
 </style>
 
 <div class="container-fluid">
@@ -66,6 +98,7 @@ h4 {
     </div>
 
     <div class="feed-container">
+
       <% @livestocks.each do |livestock| %>
         <div class="cow-container">
           <h2>Tag #<%=livestock.tag%></h2>
@@ -97,5 +130,7 @@ h4 {
           <%=link_to "View", livestock_path(livestock), :class => "btn btn-primary" %>
         </div>
       <% end %>
+
+      <%=paginate @livestocks %>
     </div>
 </div>
